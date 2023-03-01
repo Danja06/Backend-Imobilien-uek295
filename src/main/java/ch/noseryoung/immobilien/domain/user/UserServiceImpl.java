@@ -1,4 +1,4 @@
-package ch.noseryoung.immobilien.domain.User;
+package ch.noseryoung.immobilien.domain.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +13,8 @@ public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
     private Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     @Override
-    public User create(User user) {
-        return userRepository.save(user);
+    public User create(User property) {
+        return userRepository.save(property);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package ch.noseryoung.immobilien.domain.User.dto;
+package ch.noseryoung.immobilien.domain.user.dto;
 
 import ch.noseryoung.immobilien.core.validation.email.Email;
 

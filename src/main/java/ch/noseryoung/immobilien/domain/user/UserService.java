@@ -1,4 +1,4 @@
-package ch.noseryoung.immobilien.domain.User;
+package ch.noseryoung.immobilien.domain.user;
 
 import java.util.List;
 import java.util.UUID;

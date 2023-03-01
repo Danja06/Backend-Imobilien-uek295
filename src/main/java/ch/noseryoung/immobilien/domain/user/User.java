@@ -1,4 +1,4 @@
-package ch.noseryoung.immobilien.domain.User;
+package ch.noseryoung.immobilien.domain.user;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
@@ -8,7 +8,7 @@ import java.util.UUID;
 @Hidden
 @Entity
 @Table(name = "users")
-public class User {
+public class User{
     @Id
     @GeneratedValue
     @UuidGenerator

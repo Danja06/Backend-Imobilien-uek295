@@ -1,6 +1,6 @@
-package ch.noseryoung.immobilien.domain.User.dto;
+package ch.noseryoung.immobilien.domain.user.dto;
 
-import ch.noseryoung.immobilien.domain.User.User;
+import ch.noseryoung.immobilien.domain.user.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
