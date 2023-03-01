@@ -1,11 +1,9 @@
 package ch.noseryoung.immobilien.domain.user;
 
-import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
-@Hidden
 @Entity
 @Table(name = "users")
 public class User{

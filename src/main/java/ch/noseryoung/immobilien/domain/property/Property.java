@@ -23,6 +23,7 @@ public class Property {
     @Column(name = "homegate")
     private String homegate;
 
+
     public UUID getPropertyId() {
         return propertyId;
     }

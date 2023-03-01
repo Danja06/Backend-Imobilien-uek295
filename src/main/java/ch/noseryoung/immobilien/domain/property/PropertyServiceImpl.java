@@ -2,6 +2,8 @@ package ch.noseryoung.immobilien.domain.property;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -9,8 +11,12 @@ import java.util.Optional;
 import java.util.UUID;
 
 
+@Service
 public class PropertyServiceImpl implements PropertyService {
     private PropertyRepository propertyRepository;
+
+    @Autowired
+    public PropertyServiceImpl(PropertyRepository propertyRepository){ this.propertyRepository = propertyRepository; }
     private Logger LOGGER = LoggerFactory.getLogger(PropertyServiceImpl.class);
     @Override
     public Property create(Property property) {
@@ -27,12 +33,12 @@ public class PropertyServiceImpl implements PropertyService {
     }
 
     @Override
-    public Property findById(UUID id) {
-        Optional<Property> optionalProperty= propertyRepository.findById(id);
+    public Property findById(UUID propertyId) {
+        Optional<Property> optionalProperty= propertyRepository.findById(propertyId);
         if (optionalProperty.isPresent()){
             optionalProperty.get();
         }
-        throw new NoSuchElementException("User with id "+id+" does not exist");
+        throw new NoSuchElementException("User with id "+propertyId+" does not exist");
     }
 
     @Override

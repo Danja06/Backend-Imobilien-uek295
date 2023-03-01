@@ -4,7 +4,7 @@ import ch.noseryoung.immobilien.domain.user.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "string", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface UserMapper {
     User fromDTO(UserDTO.WithPassword dto);
 

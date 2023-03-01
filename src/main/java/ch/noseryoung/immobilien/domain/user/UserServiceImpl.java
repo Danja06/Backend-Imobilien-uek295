@@ -2,6 +2,7 @@ package ch.noseryoung.immobilien.domain.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -9,6 +10,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 
+@Service
 public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
     private Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);

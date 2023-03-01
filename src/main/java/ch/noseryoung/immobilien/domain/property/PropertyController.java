@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/property")
 public class PropertyController {
 
 
-    private PropertyService propertyService;
+    private PropertyServiceImpl propertyService;
 
     @Autowired
-    public PropertyController(PropertyService propertyService) {
+    public PropertyController(PropertyServiceImpl propertyService) {
         this.propertyService = propertyService;
     }
 
@@ -25,8 +25,8 @@ public class PropertyController {
         return ResponseEntity.ok(propertyService.findAll());
     }
     @GetMapping("/id")
-    public ResponseEntity<Property> findById(UUID id){
-        return ResponseEntity.ok(propertyService.findById(id));
+    public ResponseEntity<Property> findById(UUID propertyId){
+        return ResponseEntity.ok(propertyService.findById(propertyId));
     }
     @GetMapping("/name")
     public ResponseEntity<Property> findByFirstname(String name){

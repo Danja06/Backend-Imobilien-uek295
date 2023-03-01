@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public interface PropertyService {
     Property create(Property property);
-    Property findById(UUID id);
+    Property findById(UUID propertyId);
     Property findByName(String name);
     List<Property> findAll();
 }
