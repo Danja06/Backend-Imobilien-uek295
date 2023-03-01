@@ -36,15 +36,6 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User findByEmail(String email) {
-        Optional<User> optionalUser=userRepository.findByEmail(email);
-        if (optionalUser.isPresent()){
-            optionalUser.get();
-        }
-        throw new NoSuchElementException("");
-    }
-
-    @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
