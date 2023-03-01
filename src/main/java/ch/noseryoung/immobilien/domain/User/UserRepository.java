@@ -1,4 +1,4 @@
-package ch.noseryoung.imobilien.domain.User;
+package ch.noseryoung.immobilien.domain.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

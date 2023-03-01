@@ -1,4 +1,4 @@
-package ch.noseryoung.imobilien.domain.User;
+package ch.noseryoung.immobilien.domain.User;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;

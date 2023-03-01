@@ -1,4 +1,4 @@
-package ch.noseryoung.imobilien.core.validation.email;
+package ch.noseryoung.immobilien.core.validation.email;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

@@ -1,12 +1,11 @@
-package ch.noseryoung.imobilien.domain.User;
+package ch.noseryoung.immobilien.domain.User;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface UserService {
     User create(User user);
-    User findByFirstname(String firstname);
     User findById(UUID id);
-    User findByEmail(String Email);
+    User findByFirstname(String firstname);
     List<User> findAll();
 }

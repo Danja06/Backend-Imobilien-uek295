@@ -1,4 +1,4 @@
-package ch.noseryoung.imobilien;
+package ch.noseryoung.immobilien;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package ch.noseryoung.imobilien;
+package ch.noseryoung.immobilien;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
