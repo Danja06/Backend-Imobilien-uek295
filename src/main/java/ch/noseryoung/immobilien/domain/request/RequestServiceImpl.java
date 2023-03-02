@@ -14,7 +14,7 @@ public class RequestServiceImpl implements RequestService{
 
     @Override
     public Request create(Request request) {
-        return requestService.create(request);
+        return requestRepository.save(request);
     }
 
     @Override
