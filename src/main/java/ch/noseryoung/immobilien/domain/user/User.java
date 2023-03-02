@@ -1,9 +1,11 @@
 package ch.noseryoung.immobilien.domain.user;
 
+import ch.noseryoung.immobilien.domain.request.Request;
 import ch.noseryoung.immobilien.domain.role.Role;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.util.List;
 import java.util.UUID;
 @Entity
 @Table(name = "users")
@@ -23,6 +25,12 @@ public class User{
     @ManyToOne
     @JoinColumn(name = "role")
     private Role role;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "request",
+    joinColumns = @JoinColumn(name = "requestId", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+
+    private List<Request> request;
 
     public UUID getId() {
         return id;
