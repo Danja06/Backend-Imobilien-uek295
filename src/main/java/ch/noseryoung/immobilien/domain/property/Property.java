@@ -64,11 +64,11 @@ public class Property {
         this.canton = canton;
     }
 
-    public String getHomegate() {
+    public String getUrl() {
         return url;
     }
 
-    public void setHomegate(String homegate) {
-        this.url = homegate;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

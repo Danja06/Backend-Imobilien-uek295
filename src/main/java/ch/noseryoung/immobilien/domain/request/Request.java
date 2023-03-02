@@ -20,7 +20,8 @@ public class Request {
     @ManyToMany(mappedBy = "requests")
     private List<User> user;
     @Column(name = "status")
-    public boolean status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     public UUID getRequestId() {
         return requestId;
@@ -46,11 +47,11 @@ public class Request {
         this.user = user;
     }
 
-    public boolean isStatus() {
+    public Status isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }
