@@ -5,7 +5,7 @@ import ch.noseryoung.immobilien.core.validation.email.Email;
 public class UserDTO {
     private String firstname;
     private String lastname;
-    @Email
+
     private String email;
 
     public String getFirstname() {

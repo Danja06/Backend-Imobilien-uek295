@@ -28,8 +28,8 @@ public class UserController {
     public ResponseEntity<List<User>> findAll(){
         return ResponseEntity.ok(userService.findAll());
     }
-    @GetMapping("/id")
-    public ResponseEntity<User> findById(UUID id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<User> findAById(@PathVariable("id") UUID id) {
         return ResponseEntity.ok(userService.findById(id));
     } //returns user with the specific id
 

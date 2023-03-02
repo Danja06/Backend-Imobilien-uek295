@@ -20,8 +20,8 @@ public class Property {
     private int size;
     @Column(name = "canton")
     private String canton;
-    @Column(name = "homegate")
-    private String homegate;
+    @Column(name = "url")
+    private String url;
 
 
     public UUID getPropertyId() {
@@ -65,10 +65,10 @@ public class Property {
     }
 
     public String getHomegate() {
-        return homegate;
+        return url;
     }
 
     public void setHomegate(String homegate) {
-        this.homegate = homegate;
+        this.url = homegate;
     }
 }

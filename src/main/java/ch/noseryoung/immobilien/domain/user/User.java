@@ -1,5 +1,6 @@
 package ch.noseryoung.immobilien.domain.user;
 
+import ch.noseryoung.immobilien.domain.role.Role;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
 
@@ -19,6 +20,9 @@ public class User{
     private String email;
     @Column(name = "password")
     private String password;
+    @ManyToOne
+    @JoinColumn(name = "role")
+    private Role role;
 
     public UUID getId() {
         return id;
@@ -49,5 +53,14 @@ public class User{
     }
     public void setPassword(String roleId) {
         this.password = roleId;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public Role setRole(Role role) {
+        this.role = role;
+        return role;
     }
 }

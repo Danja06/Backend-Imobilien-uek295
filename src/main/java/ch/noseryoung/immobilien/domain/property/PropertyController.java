@@ -28,9 +28,9 @@ public class PropertyController {
     public ResponseEntity<Property> findById(UUID propertyId){
         return ResponseEntity.ok(propertyService.findById(propertyId));
     }
-    @GetMapping("/name")
-    public ResponseEntity<Property> findByFirstname(String name){
-        return ResponseEntity.ok(propertyService.findByName(name));
+    @GetMapping("/canton")
+    public ResponseEntity<Property> findByCanton(String canton){
+        return ResponseEntity.ok(propertyService.findByCanton(canton));
     }
     @PostMapping
     public ResponseEntity<Property> create(@RequestBody Property property){

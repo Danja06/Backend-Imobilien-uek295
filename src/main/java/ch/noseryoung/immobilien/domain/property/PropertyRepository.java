@@ -8,5 +8,6 @@ import java.util.UUID;
 
 @Repository
 public interface PropertyRepository extends JpaRepository<Property, UUID> {
-    Optional<Property> findByName(String name);
+    Optional<Property> findAllByCanton(String canton);
+    Optional<Property> findAllByName(String name);
 }

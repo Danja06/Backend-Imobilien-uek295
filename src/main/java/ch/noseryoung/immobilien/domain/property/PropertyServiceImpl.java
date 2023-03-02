@@ -25,18 +25,26 @@ public class PropertyServiceImpl implements PropertyService {
 
     @Override
     public Property findByName(String name) {
-        Optional<Property> optionalProperty= propertyRepository.findByName(name);
+        Optional<Property> optionalProperty= propertyRepository.findAllByName(name);
         if (optionalProperty.isPresent()){
-            optionalProperty.get();
+            return optionalProperty.get();
         }
         throw new NoSuchElementException("User with Firstname "+name+" does not exist");
+    }
+    @Override
+    public Property findByCanton(String canton) {
+        Optional<Property> optionalProperty= propertyRepository.findAllByCanton(canton);
+        if (optionalProperty.isPresent()){
+            return optionalProperty.get();
+        }
+        throw new NoSuchElementException("no properties in canton "+canton+" where found");
     }
 
     @Override
     public Property findById(UUID propertyId) {
         Optional<Property> optionalProperty= propertyRepository.findById(propertyId);
         if (optionalProperty.isPresent()){
-            optionalProperty.get();
+            return optionalProperty.get();
         }
         throw new NoSuchElementException("User with id "+propertyId+" does not exist");
     }
