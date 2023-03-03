@@ -21,8 +21,9 @@ public class Application {
     private Property property;
     //One Property has many applications
 
-    @ManyToMany(mappedBy = "requests")
-    private List<User> user;
+    @ManyToOne
+    @JoinColumn(name = "idUser")
+    private User user;
     //Many Users can make many Applications
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
@@ -48,11 +49,11 @@ public class Application {
         this.property = property;
     }
 
-    public List<User> getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(List<User> user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

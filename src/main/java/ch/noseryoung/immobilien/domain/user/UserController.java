@@ -29,9 +29,9 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll());
     }
     @GetMapping("/{id}")
-    public ResponseEntity<User> findAById(@PathVariable("id") UUID id) {
-        return ResponseEntity.ok(userService.findById(id));
-    } //returns user with the specific id
+    public ResponseEntity<User> findAById(@PathVariable("id") UUID userId) {
+        return ResponseEntity.ok(userService.findById(userId));
+    } //returns user with the specific userId
 
     @GetMapping("/name")
     public ResponseEntity<User> findByFirstname(String firstname){

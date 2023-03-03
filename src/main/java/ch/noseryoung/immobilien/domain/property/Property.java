@@ -1,5 +1,6 @@
 package ch.noseryoung.immobilien.domain.property;
 
+import ch.noseryoung.immobilien.domain.user.User;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
 
@@ -22,6 +23,10 @@ public class Property {
     private String canton;
     @Column(name = "url")
     private String url;
+
+    @ManyToOne
+    @JoinColumn(name = "agent_id")
+    private User user;
 
 
     public UUID getPropertyId() {
@@ -70,5 +75,13 @@ public class Property {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

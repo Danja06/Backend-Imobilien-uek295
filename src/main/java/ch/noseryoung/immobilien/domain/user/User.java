@@ -13,7 +13,7 @@ public class User{
     @Id
     @GeneratedValue
     @UuidGenerator
-    private UUID id;
+    private UUID userId;
     @Column(name = "firstname")
     private String firstname;
     @Column(name = "lastname")
@@ -26,16 +26,15 @@ public class User{
     @JoinColumn(name = "role")
     private Role role;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "request",
-    joinColumns = @JoinColumn(name = "requestId", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
-    private List<Application> application;
+    @ManyToOne
+    @JoinColumn(name = "idApplication")
+    private Application application;
 
-    public UUID getId() {
-        return id;
+    public UUID getUserId() {
+        return userId;
     }
-    public void setId(UUID id) {
-        this.id = id;
+    public void setUserId(UUID id) {
+        this.userId = id;
     }
     public String getFirstname() {
         return firstname;

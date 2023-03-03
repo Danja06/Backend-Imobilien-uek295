@@ -26,10 +26,8 @@ public class UserServiceImpl implements UserService{
     @Override
     public User create(User user) {
         if (user.getEmail().matches("(.)*@noseryoung.com")) {
-            userRepository.save(user);
             user.setRole(roleService.findByRole("Agent"));
         } else {
-            userRepository.save(user);
             user.setRole(roleService.findByRole("Client"));
         }
         return userRepository.save(user);
@@ -45,30 +43,17 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User findById(UUID id) {
-        Optional<User> optionalUser=userRepository.findById(id);
+    public User findById(UUID userId) {
+        Optional<User> optionalUser=userRepository.findById(userId);
         if (optionalUser.isPresent()){
             return optionalUser.get();
         }
-        throw new NoSuchElementException("User with id "+id+" does not exist");
+        throw new NoSuchElementException("User with id "+userId+" does not exist");
     }
 
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
-
-
-    /*public Role getRoleByEmail(User user){
-        if (user.getEmail().matches("(.)*@noseryoung.com")){
-            userRepository.save(user);
-            return user.setRole(roleService.findByRole("Agent"));
-        }
-            else {
-            userRepository.save(user);
-            return user.setRole(roleService.findByRole("Client"));
-        }
-
-    }*/
 }
 
