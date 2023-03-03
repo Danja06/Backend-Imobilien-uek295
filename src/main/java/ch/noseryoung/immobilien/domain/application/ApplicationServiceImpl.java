@@ -4,6 +4,7 @@ import ch.noseryoung.immobilien.domain.property.Property;
 import ch.noseryoung.immobilien.domain.property.PropertyService;
 import ch.noseryoung.immobilien.domain.user.User;
 import ch.noseryoung.immobilien.domain.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpServerErrorException;
@@ -18,7 +19,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     private ApplicationRepository applicationRepository;
     private UserService userService;
     private PropertyService propertyService;
-
+    @Autowired
     public ApplicationServiceImpl(ApplicationRepository applicationRepository, UserService userService, PropertyService propertyService) {
         this.applicationRepository = applicationRepository;
         this.userService = userService;
@@ -51,12 +52,11 @@ public class ApplicationServiceImpl implements ApplicationService {
         // if user.getRole -> role.getRole = Client. User pulls Role from role and if its Agent it's true & application should have the same name and property as user
         if (user.getRole().getRole().equals("Agent") && application.getProperty().getUser().equals(user)){
             for (Application newApplication: applicationRepository.findAllByProperty(application.getProperty())){
-                newApplication.setStatus(Status.ACCEPTED);
+                newApplication.setStatus(Status.DENIED);
                 applicationRepository.save(application);
             }
                 application.setStatus(Status.ACCEPTED);
-                applicationRepository.save(application);
-                    return application;
+                    return applicationRepository.save(application);
             }
         throw new HttpServerErrorException(HttpStatus.UNAUTHORIZED);
         }

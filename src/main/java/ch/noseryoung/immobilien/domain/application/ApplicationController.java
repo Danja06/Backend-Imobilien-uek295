@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("applications")
+@RequestMapping("/applications")
 public class ApplicationController {
     private ApplicationService applicationService;
     private ApplicationMapper applicationMapper;
@@ -26,13 +26,16 @@ public class ApplicationController {
         return ResponseEntity.status(HttpStatus.CREATED).body(applicationMapper.toDTO(applicationService.create(userId, propertyId)));
     }
 
-    @PatchMapping("/property/{propertyId}/user/{userId}")
+    @PatchMapping("/accept/property/{propertyId}/user/{userId}")
     public ResponseEntity<ApplicationDto> acceptStatus(@PathVariable("propertyId") UUID propertyId, @PathVariable("userId") UUID userId) {
         return ResponseEntity.status(HttpStatus.CREATED).body(applicationMapper.toDTO(applicationService.acceptedStatus(userId, propertyId)));
     }
 
-    @PatchMapping("/property/{propertyId}/user/{userId}")
+    @PatchMapping("/deny/property/{propertyId}/user/{userId}")
     public ResponseEntity<ApplicationDto> deniedStatus(@PathVariable("propertyId") UUID propertyId, @PathVariable("userId") UUID userId) {
         return ResponseEntity.status(HttpStatus.CREATED).body(applicationMapper.toDTO(applicationService.deniedStatus(userId, propertyId)));
     }
+
+
+
 }
