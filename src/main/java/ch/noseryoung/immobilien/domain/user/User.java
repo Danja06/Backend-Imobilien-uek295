@@ -29,7 +29,6 @@ public class User{
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "request",
     joinColumns = @JoinColumn(name = "requestId", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
-
     private List<Application> application;
 
     public UUID getId() {
