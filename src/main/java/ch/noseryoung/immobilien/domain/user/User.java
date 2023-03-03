@@ -1,6 +1,6 @@
 package ch.noseryoung.immobilien.domain.user;
 
-import ch.noseryoung.immobilien.domain.request.Request;
+import ch.noseryoung.immobilien.domain.application.Application;
 import ch.noseryoung.immobilien.domain.role.Role;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
@@ -30,7 +30,7 @@ public class User{
     @JoinTable(name = "request",
     joinColumns = @JoinColumn(name = "requestId", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
 
-    private List<Request> request;
+    private List<Application> application;
 
     public UUID getId() {
         return id;
