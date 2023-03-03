@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "requests")
+@Table(name = "applications")
 public class Application {
     @Id
     @GeneratedValue

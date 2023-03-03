@@ -1,7 +1,7 @@
 package ch.noseryoung.immobilien.domain.user;
 
-import ch.noseryoung.immobilien.domain.user.dto.UserDTO;
-import ch.noseryoung.immobilien.domain.user.dto.UserMapper;
+import ch.noseryoung.immobilien.domain.user.userDto.UserDTO;
+import ch.noseryoung.immobilien.domain.user.userDto.UserMapper;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,4 @@
-package ch.noseryoung.immobilien.domain.user.dto;
-
-import ch.noseryoung.immobilien.core.validation.email.Email;
+package ch.noseryoung.immobilien.domain.user.userDto;
 
 public class UserDTO {
     private String firstname;
